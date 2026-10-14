@@ -11,7 +11,8 @@ on:
 jobs:
   afficher-branche:
     runs-on: ubuntu-latest
-
     steps:
       - name: Afficher le nom de la branche
-        run: echo "Branche actuelle : ${{ github.ref_name }}"
+        env:
+          BRANCHE: ${{ github.ref_name }}
+        run: 'echo "Branche actuelle : $BRANCHE"'
