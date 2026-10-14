@@ -6,18 +6,24 @@ on:
 jobs:
   nom:
     runs-on: ubuntu-latest
+    env:
+      NOM: ${{ vars.NOM }}
     steps:
       - name: Afficher le nom
-        run: echo "Nom : ${{ vars.NOM }}"
+        run: echo "Nom : $NOM"
 
   prenom:
     runs-on: ubuntu-latest
+    env:
+      PRENOM: ${{ vars.PRENOM }}
     steps:
       - name: Afficher le prénom
-        run: echo "Prénom : ${{ vars.PRENOM }}"
+        run: echo "Prénom : $PRENOM"
 
   email:
     runs-on: ubuntu-latest
+    env:
+      EMAIL: ${{ vars.EMAIL }}
     steps:
       - name: Afficher l'email
-        run: echo "Email : ${{ vars.EMAIL }}"
+        run: echo "Email : $EMAIL"
